@@ -6,8 +6,86 @@
 <meta charset="UTF-8">
 <title>게시판 리스트</title>
 </head>
+<style>
+	div.board_list {
+		margin:auto;
+		border:1px solid green;
+	}
+	div.board_list div.title {
+		margin:20px 47% 10px 47%;
+		display:inline-block;
+		color:rgb(66,139,202);
+		font-size:18px;
+		font-weight:500;
+	}
+	div.board_list section.button div{
+		margin:10px 27%;
+	}
+	div.board_list section.button div ul{
+		list-style:none;
+	}
+	div.board_list section.button div ul li a{
+		text-decoration:none;
+	}
+	div.board_list section.button button {
+		all:unset;
+		color:black;
+		background-color:white;
+		width:auto;
+		height:40px;
+		padding:0 10px;
+	}
+	div.board_list section.button button:hover {
+		all:unset;
+		color:rgb(66,139,202);
+		background-color:rgb(238,238,238);
+		width:auto;
+		height:40px;
+		padding:0 10px;
+	}
+	div.board_list section.button button.btn_all {
+		all:unset;
+		color:white;
+		background-color:rgb(66,139,202);
+		width:auto;
+		height:40px;
+		padding:0 10px;
+	}
+	hr {
+		border:1px solid rgb(66,139,202);
+		background-color:rgb(66,139,202);
+		width:80px;
+		margin:0 46%;
+	}
+	div.board_list section.list table{
+		border:1px solid #CCC;
+		border-collapse:collapse;
+		margin:10px auto;
+	}
+	div.board_list section.list table tr:first-child td{
+		font-size:15px;
+		font-weight:600;
+		color:black;
+		padding: 5px 13px;
+	}
+	div.board_list section.list table tr td{
+		border:1px solid #CCC;
+		border-collapse:collapse;
+		padding:5px 15px;
+		color:rgb(66,139,202);
+	}
+	div.board_list section.list table tr td a{
+		text-decoration:none;
+		color:rgb(66,139,202);
+	}
+	div.board_list section.list table tr td a:hover{
+		text-decoration:underline;
+	}
+	
+</style>
 <body>
 	<div class="board_list">
+	  <div class="title"> 게시판 </div><hr>	
 		<section class="button">
 			<div>
 				<ul>
@@ -39,6 +117,14 @@
 						<td>0</td>
 						<td>2</td>
 						<td>5분전</td>
+					</tr>
+					<tr>
+						<td><a href="board_content.do">질문 글을 지우지 말아주세요.</a></td>
+						<td>오타/오역/요청</td>
+						<td>manager00</td>
+						<td>19</td>
+						<td>543</td>
+						<td>2년전</td>
 					</tr>
 				</table>
 		</section>
