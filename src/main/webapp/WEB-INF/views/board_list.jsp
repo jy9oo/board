@@ -18,16 +18,19 @@
 		font-size:18px;
 		font-weight:500;
 	}
-	div.board_list section.button div{
+	div.board_list section.button div,
+	div.board_list section.paging div{
 		margin:10px 27%;
 	}
-	div.board_list section.button div ul{
+	div.board_list section.button div ul,
+	div.board_list section.paging div ul{
 		list-style:none;
 	}
 	div.board_list section.button div ul li a{
 		text-decoration:none;
 	}
-	div.board_list section.button button {
+	div.board_list section.button button ,
+	div.board_list section.paging button {
 		all:unset;
 		color:black;
 		background-color:white;
@@ -51,16 +54,11 @@
 		height:40px;
 		padding:0 10px;
 	}
-	hr {
-		border:1px solid rgb(66,139,202);
-		background-color:rgb(66,139,202);
-		width:80px;
-		margin:0 46%;
-	}
 	div.board_list section.list table{
 		border:1px solid #CCC;
 		border-collapse:collapse;
-		margin:10px auto;
+		margin:25px auto;
+
 	}
 	div.board_list section.list table tr:first-child td{
 		font-size:15px;
@@ -80,6 +78,59 @@
 	}
 	div.board_list section.list table tr td a:hover{
 		text-decoration:underline;
+	}
+	div.board_list section.paging button {
+		border:1px solid #CCC;
+		height:30px;
+		margin:15px -4px;
+		padding:0 15px;
+		font-size:13px;
+		font-weight:500;
+		color:gray;
+	}
+	div.board_list section.paging button:hover{
+		border:1px solid rgb(66,139,202);
+		background-color:rgb(66,139,202);
+		color:white;
+		height:30px;
+		margin:15px -4px;
+		padding:0 15px;
+		font-size:13px;
+		font-weight:500;
+	}
+	div.board_list section.paging button:nth-child(2){
+		background-color:rgb(66,139,202);
+		border:1px solid rgb(66,139,202);
+		color:white;
+	}
+	div.board_list section.search div{
+		margin:10px 35%;
+	}
+	div.board_list section.search div select{
+		width:100px;
+		height:35px;
+		padding-left:10px;
+		border: 1px solid #CCC;
+	}
+	div.board_list section.search div input[type=text]{
+		width:200px;
+		height:31px;
+		border: 1px solid #CCC;
+	}
+	div.board_list section.search div button{
+		all:unset;
+		width:45px;
+		height:33px;
+		color:white;
+		font-size:15px;
+		text-align:center;
+		background-color:rgb(66,139,202);
+	}
+	hr{
+		border:1px solid rgb(66,139,202);
+		background-color:rgb(66,139,202);
+		width:80px;
+		margin:0 46%;
 	}
 	
 </style>
@@ -129,7 +180,24 @@
 				</table>
 		</section>
 		<section class="paging">
-			<div>처음 1 2 3 4 5 6 7 8 9 10 마지막</div>
+			<div>
+				<ul>
+					<li>
+						<button>처음</button>
+						<button>1</button>
+						<button>2</button>
+						<button>3</button>
+						<button>4</button>
+						<button>5</button>
+						<button>6</button>
+						<button>7</button>
+						<button>8</button>
+						<button>9</button>
+						<button>10</button>
+						<button>마지막</button>
+					</li>
+				</ul>		
+			</div>
 		</section>
 		<section class="search">
 			<div>
