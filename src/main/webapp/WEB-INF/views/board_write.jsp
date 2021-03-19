@@ -104,7 +104,10 @@
 		width:900px;
 		height:200px;
 	}
-	div.board_write section.content div ul li:nth-child(7) button{
+	div.board_write section.content div ul li:nth-child(7) input[type=file]{
+		margin-left:130px;
+	}
+	div.board_write section.content div ul li:nth-child(9) button{
 		all:unset;
 		color:white;
 		background-color:rgb(66,139,202);
@@ -143,33 +146,38 @@
 				</div>
 			</section>
 			<section class="content">
-				<div>
-					<ul>
-						<li>
-							<input type="text">
-						</li>
-						<li>
-							<select>
-								<option>자유</option>
-								<option>질문</option>
-								<option>오타/오역/요청</option>
-								<option>홍보</option>
-							</select>
-						</li>
-						<li><input type="text"></li>
-						<li><input type="text"></li>
-						<li>
-							<select>
-								<option>C++17</option>
-								<option>Python3</option>
-								<option>C99</option>
-								<option>Java 11</option>
-							</select>
-						</li>
-						<li><textarea></textarea></li>
-						<li><button>글쓰기</button></li>
-					</ul>
-				</div>
+				<form name="board_write_form" action="board_write_proc.do" 
+												method="post" enctype="multipart/form-data">
+					<div>
+						<ul>
+							<li>
+								<input type="text" name="btitle" id="btitle">
+							</li>
+							<li>
+								<select name="bcategory">
+									<option value="자유">자유</option>
+									<option value="질문">질문</option>
+									<option value="오타/오역/요청">오타/오역/요청</option>
+									<option value="홍보">홍보</option>
+								</select>
+							</li>
+							<li><input type="text" name="pnumber"></li>
+							<li><input type="text" name="bcontent"></li>
+							<li>
+								<select name="lang">
+									<option>C++17</option>
+									<option>Python3</option>
+									<option>C99</option>
+									<option>Java 11</option>
+								</select>
+							</li>
+							<li><textarea name="bcodes"></textarea></li>
+							<li><input type="file"  name="file1"></li>
+							<li><input type="hidden" name="mid" value="aaa123"></li>
+							<li><button type="submit">글쓰기</button></li>
+						</ul>
+					</div>
+				</form>
 			</section>
 		</div>
 </body>
