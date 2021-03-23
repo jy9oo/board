@@ -16,8 +16,8 @@ public class BoardController {
 	private boardServiceImpl boardService;
 	
 	@RequestMapping(value="/board_list.do", method=RequestMethod.GET)
-	public String board_list(){
-		return "board_list";
+	public ModelAndView board_list(){
+		return (ModelAndView)boardService.boardList();
 	}
 	
 	@RequestMapping(value="/board_write.do", method=RequestMethod.GET)

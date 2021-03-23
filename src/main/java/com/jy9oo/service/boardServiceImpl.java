@@ -1,5 +1,7 @@
 package com.jy9oo.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,6 +21,14 @@ public class boardServiceImpl {
 		if(result) {
 			mv.setViewName("redirect:board_list.do");
 		}
+		return mv;
+	}
+	
+	public Object boardList() {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<boardVO> list = boardDAO.getList();
+		mv.addObject("list", list);
+		mv.setViewName("board_list");
 		return mv;
 	}
 }

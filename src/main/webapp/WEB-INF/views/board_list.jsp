@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -161,22 +162,17 @@
 						<td>좋아요</td>
 						<td>작성일</td>
 					</tr>
+					<c:forEach var="vo" items="${list}">
 					<tr>
-						<td><a href="board_content.do">알고리즘 질문드립니다.</a></td>
-						<td>질문</td>
-						<td>aaa123</td>
-						<td>0</td>
+						<td><a href="board_content.do">${vo.btitle}</a></td>
+						<td>${vo.bcategory}</td>
+						<td>${vo.mid}</td>
 						<td>2</td>
-						<td>5분전</td>
+						<td>${vo.blike}</td>
+						<td>${vo.bdate}</td>
 					</tr>
-					<tr>
-						<td><a href="board_content.do">질문 글을 지우지 말아주세요.</a></td>
-						<td>오타/오역/요청</td>
-						<td>manager00</td>
-						<td>19</td>
-						<td>543</td>
-						<td>2년전</td>
-					</tr>
+					</c:forEach>
+					
 				</table>
 		</section>
 		<section class="paging">
