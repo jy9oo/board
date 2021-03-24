@@ -32,16 +32,19 @@ public class BoardController {
 	
 	
 	@RequestMapping(value="/board_content.do", method=RequestMethod.GET)
-	public String board_content() {
-		return "board_content";
+	public ModelAndView board_content(String id) {
+		return (ModelAndView)boardService.boardContent(id);
 	}
 	
 	@RequestMapping(value="/board_update.do", method=RequestMethod.GET)
-	public String board_update() {
-		return "board_update";
+	public ModelAndView board_update(String id) {
+		return (ModelAndView)boardService.boardUpdate(id);
 	}
 	
-	
+	@RequestMapping(value="/board_update_proc.do", method=RequestMethod.POST)
+	public ModelAndView board_update_proc(boardVO vo) {
+		return (ModelAndView)boardService.boardUpdateP(vo);
+	}
 	
 	
 	

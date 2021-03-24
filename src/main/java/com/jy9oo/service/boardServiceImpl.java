@@ -31,4 +31,30 @@ public class boardServiceImpl {
 		mv.setViewName("board_list");
 		return mv;
 	}
+	
+	public Object boardContent(String id) {
+		ModelAndView mv = new ModelAndView();
+		boardVO vo = boardDAO.getContent(id);
+		mv.addObject("vo", vo);
+		mv.setViewName("board_content");
+		return mv;
+	}
+	
+	public Object boardUpdate(String id) {
+		ModelAndView mv = new ModelAndView();
+		boardVO vo = boardDAO.getContent(id);
+		mv.addObject("vo", vo);
+		mv.setViewName("board_update");
+		return mv;
+	}
+
+	public Object boardUpdateP(Object vo) {
+		ModelAndView mv = new ModelAndView();
+		boolean result = boardDAO.getUpdateP((boardVO)vo);
+		if(result) {
+			mv.setViewName("redirect:/board_list.do");
+		}
+		return mv;
+	}
+	
 }

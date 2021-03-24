@@ -7,19 +7,19 @@
 <title>게시판 글 수정</title>
 </head>
 <style>
-	div.board_update {
+	div.board_write {
 		margin:50px auto;
 	}
-	div.board_update section.button div{
+	div.board_write section.button div{
 		margin:10px 27%;
 	}
-	div.board_update section.button div ul{
+	div.board_write section.button div ul{
 		list-style:none;
 	}
-	div.board_update section.button div ul li a{
+	div.board_write section.button div ul li a{
 		text-decoration:none;
 	}
-	div.board_update section.button button{
+	div.board_write section.button button{
 		all:unset;
 		color:black;
 		background-color:white;
@@ -27,7 +27,7 @@
 		height:40px;
 		padding:0 10px;
 	}
-	div.board_update section.button button:hover {
+	div.board_write section.button button:hover {
 		all:unset;
 		color:rgb(66,139,202);
 		background-color:rgb(238,238,238);
@@ -35,7 +35,7 @@
 		height:40px;
 		padding:0 10px;
 	}
-	div.board_update section.button button.btn_update {
+	div.board_write section.button button.btn_write {
 		all:unset;
 		color:white;
 		background-color:rgb(66,139,202);
@@ -43,67 +43,71 @@
 		height:40px;
 		padding:0 10px;
 	}
-	div.board_update section.title{
+	
+	div.board_write section.title{
 		display:block;
 		float:left;
 		margin:0 20px 0 50px;
 	}	
-	div.board_update section.title div ul li{
+	div.board_write section.title div ul li{
 		text-align:right;
 	}
-	div.board_update section.title div ul li:first-child{
+	div.board_write section.title div ul li:first-child{
 		padding-top:7px;
 	}
-	div.board_update section.title div ul li:nth-child(2),
-	div.board_update section.title div ul li:nth-child(3),
-	div.board_update section.title div ul li:nth-child(4),
-	div.board_update section.title div ul li:nth-child(6){
+	div.board_write section.title div ul li:nth-child(2),
+	div.board_write section.title div ul li:nth-child(3),
+	div.board_write section.title div ul li:nth-child(4),
+	div.board_write section.title div ul li:nth-child(6){
 		padding-top:16px;
 	}
-	div.board_update section.title div ul li:nth-child(5){
+	div.board_write section.title div ul li:nth-child(5){
 		padding-top:485px;
 	}
-	div.board_update section.content{
+	div.board_write section.content{
 		display:block;
 		border:1px solid white;
 	}	
-	div.board_update section.title div ul,
-	div.board_update section.content div ul{
+	div.board_write section.title div ul,
+	div.board_write section.content div ul{
 		list-style:none;
 	}
-	div.board_update section.title div ul li,
-	div.board_update section.content div ul li{
+	div.board_write section.title div ul li,
+	div.board_write section.content div ul li{
 		margin:15px auto;
 		font-size:14px;
 		font-weight:600;
 	}
-	div.board_update section.content div ul li input[type=text],
-	div.board_update section.content div ul li select,
-	div.board_update section.content div ul li textarea{
+	div.board_write section.content div ul li input[type=text],
+	div.board_write section.content div ul li select,
+	div.board_write section.content div ul li textarea{
 		border:1px solid #CCC;
 		height:30px;
 	}
-	div.board_update section.content div ul li:first-child input[type=text]{
+	div.board_write section.content div ul li:first-child input[type=text]{
 		width:400px;
 	}
-	div.board_update section.content div ul li:nth-child(2) select,
-	div.board_update section.content div ul li:nth-child(5) select{
+	div.board_write section.content div ul li:nth-child(2) select,
+	div.board_write section.content div ul li:nth-child(5) select{
 		width:120px;
 		padding-left:10px;
 		height:35px;
 	}
-	div.board_update section.content div ul li:nth-child(3) input[type=text]{
+	div.board_write section.content div ul li:nth-child(3) input[type=text]{
 		width:60px;
 	}
-	div.board_update section.content div ul li:nth-child(4) input[type=text]{
+	div.board_write section.content div ul li:nth-child(4) input[type=text]{
 		width:900px;
 		height:500px;
 	}
-	div.board_update section.content div ul li:nth-child(6) textarea{
+	div.board_write section.content div ul li:nth-child(6) textarea{
 		width:900px;
 		height:200px;
 	}
-	div.board_update section.content div ul li:nth-child(7) button{
+	div.board_write section.content div ul li:nth-child(7) input[type=file]{
+		margin-left:130px;
+	}
+	div.board_write section.content div ul li:nth-child(9) button{
 		all:unset;
 		color:white;
 		background-color:rgb(66,139,202);
@@ -114,7 +118,7 @@
 	}
 </style>
 <body>
-		<div class="board_update">
+		<div class="board_write">
 			<section class="button">
 				<div>
 					<ul>
@@ -124,7 +128,7 @@
 							<button class="btn_question">질문</button>
 							<button class="btn_typo">오타/오역/요청</button>
 							<button class="btn_ad">홍보</button>
-							<a href="board_update.do"><button class="btn_write">글쓰기</button></a>
+							<a href="board_write.do"><button class="btn_write">글쓰기</button></a>
 						</li>				
 					</ul>
 				</div>
@@ -142,33 +146,40 @@
 				</div>
 			</section>
 			<section class="content">
-				<div>
-					<ul>
-						<li>
-							<input type="text">
-						</li>
-						<li>
-							<select>
-								<option>자유</option>
-								<option>질문</option>
-								<option>오타/오역/요청</option>
-								<option>홍보</option>
-							</select>
-						</li>
-						<li><input type="text"></li>
-						<li><input type="text"></li>
-						<li>
-							<select>
-								<option>C++17</option>
-								<option>Python3</option>
-								<option>C99</option>
-								<option>Java 11</option>
-							</select>
-						</li>
-						<li><textarea></textarea></li>
-						<li><button>수정 완료</button></li>
-					</ul>
-				</div>
+				<form name="board_update_form" action="board_update_proc.do" 
+												method="post" enctype="multipart/form-data">
+					<div>
+						<ul>
+							<li>
+								<input type="text" name="btitle" id="btitle" value="${vo.btitle }">
+							</li>
+							<li>
+								<select name="bcategory" >
+									<option value="${vo.bcategory }">${vo.bcategory }</option>
+									<option value="자유">자유</option>
+									<option value="질문">질문</option>
+									<option value="오타/오역/요청">오타/오역/요청</option>
+									<option value="홍보">홍보</option>
+								</select>
+							</li>
+							<li><input type="text" name="pnumber" value="${vo.pnumber}"></li>
+							<li><input type="text" name="bcontent" value="${vo.bcontent}"></li>
+							<li>
+								<select name="lang" >
+									<option>${vo.lang }</option>
+									<option>C++17</option>
+									<option>Python3</option>
+									<option>C99</option>
+									<option>Java 11</option>
+								</select>
+							</li>
+							<li><textarea name="bcodes">${vo.bcodes }</textarea></li>
+							<li><input type="file"  name="file1"></li>
+							<li><input type="hidden" name="mid" value="aaa123"></li>
+							<li><button type="submit"> 수정완료</button></li>
+						</ul>
+					</div>
+				</form>
 			</section>
 		</div>
 </body>

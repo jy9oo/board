@@ -164,7 +164,7 @@
 					</tr>
 					<c:forEach var="vo" items="${list}">
 					<tr>
-						<td><a href="board_content.do">${vo.btitle}</a></td>
+						<td><a href="board_content.do?id=${vo.bid}">${vo.btitle}</a></td>
 						<td>${vo.bcategory}</td>
 						<td>${vo.mid}</td>
 						<td>2</td>

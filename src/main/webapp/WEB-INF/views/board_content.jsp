@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,28 +106,28 @@
 				</div>
 			</section>
 		<section class="content">
+			<%-- <c:forEach var="vo" items="list"> --%>
 			<div>
 				<ul>
-					<li>알고리즘 질문드립니다.</li>
+					<li>${vo.btitle }</li>
 					<li>
 						<table>
 							<tr>
-								<td> aaa123 <span>5분 전</span><span>👍2</span></td>
+								<td> ${vo.mid } <span>${vo.bdate }</span><span>👍${vo.blike }</span></td>
 							</tr>
 							<tr>
 								<td>
-									최대이익 계산하기 가로,세로의 크기가 N*N인 이익이 있다.
-									이익을 얻을 때는 가로 혹은 세로 절반으로 나누어 한쪽 절반에 해당하는 부분을 모두 활용하여 얻는다.
-									어쩌구저쩌구~~~~~~~~~~
+									${vo.bcontent }
 									<br><br><br>
 								</td>
 							</tr>
 						</table>
 					</li>
-						<a href="board_update.do"><button type="button" class="update_btn">수정 하기</button></a>
+						<a href="board_update.do?id=${vo.bid}"><button type="button" class="update_btn">수정 하기</button></a>
 						<button type="button" class="reply_btn">댓글 쓰기</button>
 				</ul>
 			</div>
+			<%-- </c:forEach> --%>
 		</section>
 		
 	</div>
